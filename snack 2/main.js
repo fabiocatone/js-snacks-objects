@@ -5,28 +5,36 @@ function random(max,min){
 const league = [
     {
         "name" : "Internazionale",
-        "points" : Number(random(100,1)),
-        "fouls-suffered" : Number(random(100,1))
+        "points" : 0,
+        "foulsSuffered" : 0
     }, 
 
     {
         "name" : "A.C Milan",
-        "points" : Number(random(100,1)),
-        "fouls-suffered" : Number(random(100,1))
+        "points" : 0,
+        "foulsSuffered" : 0
     },
     
     {"name" : "Napoli",
-        "points" : Number(random(100,1)),
-        "fouls-suffered" : Number(random(100,1))}
+        "points" : 0,
+        "foulsSuffered" : 0}
 
     
 ]
+for (i = 0; i<league.length; i++) {
+    league[i].points = Number(random(100,1));
+    league[i].foulsSuffered = Number(random(100,1))
+}
+ 
 console.log(league);
 
 let fixArray = []
 for (let i = 0; i<league.length; i++) {
-   delete league[i].points
-   fixArray.push(league[i])
+  let newteam = {
+    "name" : league[i].name,
+    "foulsSuffered" : league[i].foulsSuffered
+  }
+  fixArray.push(newteam)
 }
 
 console.log(fixArray);
